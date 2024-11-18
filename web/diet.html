@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食在湖北</title>
+    <style>
+      * {
+          padding: 0;
+          margin: 0;
+          border: 0;
+          transition: all .5s ease;
+      }
+      .container {
+         position: relative;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         max-width: 600px;
+         height: 300px;
+         margin: 10% auto;
+         overflow: hidden;
+         z-index: 0;
+         
+      }
+
+      .container:hover{
+         box-shadow: 0 20px 20px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      .container .intro {
+         position: absolute;
+         top: 0;
+         left: 100%;
+         width: 50%;
+         height: 90%;
+         background: rgba(0, 0, 0, 0.5);
+         padding: 35px 25px;
+      }
+      .container:hover .intro {
+         left:50%;
+         z-index: 999;
+         color: white;
+      }
+      
+    </style>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<!-- <body style="background-color: darkgrey;height: 100vh;justify-content: center;align-items: center;display: flex;"> -->
+ <div class="wuhan">
+    
+    <h1 class="foodplace"></h1>
+
+      <div class="container">
+         
+            <img src="../images/foodwuhan1.jpeg" alt="热干面">'
+            <div class="intro">
+            <h2 class="foodname">热干面</h2>
+            <p class="foodintro">武汉最具代表性的小吃之一，面条筋道有嚼劲，搭配芝麻酱、葱花、萝卜丁等调料，香气扑鼻</p>
+         </div>
+      </div>
+
+    <div class="container">
+      <img src="../images/foodwuhan2.jpg" alt="三鲜豆皮">
+      <h2 class="foodname">三鲜豆皮</h2>
+      <p class="foodintro"></p>以糯米、豆皮为主要原料，包裹着鲜肉、鲜蛋、鲜虾等馅料，口感丰富，味道鲜美</p>
+    </div>
+ </div>  
+
+ <div class="jingzhou">
+    
+    <h1 class="foodplace">荆州</h1>
+    <img src="" alt="">
+    <h2 class="foodname"></h2>
+    <p class="foodintro">1111</p>
+ </div>
+ <div class="xiangyang">
+    
+    <h1 class="foodplace">襄阳</h1>
+    <img src="" alt="">
+    <h2 class="foodname"></h2>
+    <p class="foodintro"></p>
+ </div>
+ <div class="qianjiang">
+    
+    <h1 class="foodplace">潜江</h1>
+    <img src="" alt="">
+    <h2 class="foodname">小龙虾</h2>
+    <p class="foodintro"></p>
+ </div> 
+</body>
+</html>

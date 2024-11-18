@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文化湖北</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            
+        }
+        .shell {
+            width: 100%;
+            position: relative;
+            padding: 80px;
+            transition: 0.3s ease 0s;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .shell:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(99, 99, 99, 0.8);
+            content: "";
+        }
+        .hover {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+        .timeline {
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            flex-direction: column;
+            max-width: 700px;
+            position: relative;
+        }
+        .title {
+            font-weight: normal;
+            font-size: 60px;
+            margin: -10px 0 0 0;
+            transition: 0.4s;
+            padding: 0 10px;
+            box-sizing: border-box;
+            color: azure;
+        }
+        .intro {
+            margin: 0;
+            font-size: 15px;
+            box-sizing: border-box;
+            color: rgba(255,255,255,0.7);
+            line-height: 25px;
+        }
+        .timeline:before {
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            margin-left: -1px;
+            content: "";
+            background: rgba(255, 255, 255, 0.07);
+        }
+        .item {
+            padding: 40px 0;
+            opacity: 0.3;
+            filter: blur(2px);transition: 0.5s;
+            box-sizing: border-box;
+            width: calc(50% - 40px);
+            display: flex;
+            position: relative;
+            transform: translateY(-80px); 
+        }
+        .item:before {
+            content: attr(data-text);
+            letter-spacing: 3px;
+            width: 100%;
+            position: absolute;
+            color: rgba(255,255,255,0.5);
+            font-size: 13px;
+            border-left: 2px solid rgba(255,255,255,0.5);
+            top: 70%;
+            margin-top: -5px;
+            padding-left: 15px;
+            opacity: 0;
+            right: calc(-100% - 56px);
+            font: 900 20px;
+            letter-spacing: 5px;
+        }
+        .item:nth-child(even) {
+            align-self: flex-end;
+        }
+        .item:nth-child(even):before {
+            right: auto;
+            text-align: right;
+            left: calc(-100% - 56px);
+            padding-left: 0;
+            border-left: none;
+            border-right: 2px solid rgba(255,255,255,0.5);
+            padding-right: 15px;
+        }
+        .item--active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0px);
+        }
+            .item--active:before {
+                top: 50%;
+                transition: 0.3s all 0.2s;
+                opacity: 1;
+            }
+            .item--active .title {
+                margin: -50px 0 20px 0;
+            }
+            .img {
+                max-width: 100%;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.4);
+            }
+            .footer {
+                padding: 95px 0;
+                text-align: center;
+            }
+            .footer a {
+                color: #999;
+                display: inline-block;
+                
+            }
+           
+        
+        @media only screen and (max-width: 767px) {
+                .item {
+                    align-self: baseline !important;
+                    width: 100%;
+                    padding: 0 30px 150px 80px;
+                }
+                .item:before {
+                    left: 10px !important;
+                    padding: 0 !important;
+                    top: 50px;
+                    text-align: center !important;
+                    width: 60px;
+                    border: none !important;
+                }
+                .item:last-child {
+                    padding-bottom: 40px;
+                }
+            } 
+            @media only screen and (max-width: 767px) {
+                .timeline:before {
+                    left: 40px;
+                }
+            }
+    </style>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="shell" id="shell">
+        <div class="timeline">
+
+            <div class="item" data-text="古代时期">
+                <div class="content">
+                    <img src="../images\culture1.jpg" alt="赤壁之战" class="img">
+                    <h1 class="title">赤壁之战</h1>
+                    <h2 class="time">208 年</h2>
+                    <p class="intro">
+                    曹操率领大军与孙权、刘备联军在长江赤壁一带进行的一场大战。这是中国历史上以少胜多、以弱胜强的著名战役之一，为三国鼎立局面的形成奠定了重要基础。战争地点在今湖北省赤壁市西北。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="近代时期">
+                <div class="content">
+                    <img src="../images\culture2.jpg" alt="辛亥革命" class="img">
+                    <h1 class="title">辛亥革命</h1>
+                    <h2 class="time">1911 年 10 月 10 日</h2>
+                    <p class="intro">
+                        革命党人在武昌发动起义，迅速攻占了楚望台军械库，炮轰总督府，一举推翻了清朝帝制，打开了近代中国进步的闸门。这次起义是辛亥革命的开端，对中国的政治、社会变革产生了极其重要的影响。
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="新民主主义革命时期">
+                <div class="content">
+                    <img src="../images\culture3.jpg" alt="京汉铁路大罢工" class="img">
+                    <h1 class="title">京汉铁路大罢工</h1>
+                    <h2 class="time">1923 年</h2>
+                    <p class="intro">
+                        以汉口江岸为中心的京汉铁路大罢工爆发，把全国第一次工人运动的高潮推向顶点。这次罢工显示了中国工人阶级的力量，对中国革命产生了深远的影响。
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="抗日战争时期">
+                <div class="content">
+                    <img src="../images\culture4.jpg" alt="武汉保卫战" class="img">
+                    <h1 class="title">武汉保卫战</h1>
+                    <h2 class="time">1938 年</h2>
+                    <p class="intro">
+                        中国军队在武汉及其周边地区进行了武汉保卫战。中国部署百万兵力，在鄂、皖、赣、豫、湘五省区广袤土地上，以陆、海、空协同作战方式，进行了 5 个月的大会战，歼灭敌人大量有生力量。武汉保卫战使日军锐气接连受挫，被迫放弃 “速战速决” 方针，中国人民抗日战争开始进入战略相持阶段。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="现代时期">
+                <div class="content">
+                    <img src="../images\culture5.jpg" alt="三峡工程" class="img">
+                    <h1 class="title">三峡工程</h1>
+                    <h2 class="time">sj</h2>
+                    <p class="intro">
+                        三峡工程是中国也是世界上最大的水利枢纽工程，位于湖北省宜昌市。三峡工程的建设对于防洪、发电、航运、水资源利用等具有重大意义，对湖北以及整个长江流域的经济发展产生了深远的影响。
+
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        (function ($) {
+                     $.fn.timeline=function (){
+                     var selectors={
+                         id:$(this),
+                    item: $(this).find(".item"),
+                    activeClass:"item--active",
+                    img:".img"
+                };
+                selectors.item.eq(0).addClass(selectors.activeClass);
+                selectors.id.css(
+                    "background-image",
+                    "url("+
+                    selectors.item.first()
+                        .find(selectors.img)
+                        .attr("src") +
+                    ")"
+                );
+
+                var itemLength=selectors.item.length;
+
+                $(window).scroll(function() {
+                    var max,min;
+                    var pos=$(this).scrollTop();
+                    selectors.item.each(function(i) {
+                        min=$(this).offset().top;
+                        max=$(this).height()+$(this).offset().top;
+                        var that=$(this);
+                        if(i==itemLength - 2 && pos > min + $(this).height()/2){
+                            selectors.item.removeClass(selectors.activeClass);
+                            selectors.id.css(
+                                "background-image",
+                                "url("+
+                                selectors.item.last()
+                                .find(selectors.img)
+                                .attr("src")+
+                                ")"
+                            );
+                            selectors.item.last().addClass(selectors.activeClass);
+            
+                        }
+                        else if (pos<= max - 10 && pos>= min){
+                            selectors.id.css(
+                                "background-image",
+                                "url("+
+                                $(this)
+                                .find(selectors.img)
+                                .attr("src")+
+                                ")"
+                            );
+                            selectors.item.removeClass(selectors.activeClass);
+                            $(this).addClass(selectors.activeClass);
+                        }
+                    });                    
+                });
+            };
+        })(jQuery)
+        
+        $("#shell").timeline();
+
+    </script>
+</body>
+</html>
