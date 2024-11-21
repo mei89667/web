@@ -1,138 +1,31 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>畅游湖北</title>
     <style>
-        * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
-
-        /* body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        
             /* background-size: cover; */
         body {
             background-image: url(images/mainbackground.jpg);
             background-size: cover;
         }
-
-        #nav {
-            height: 50px;
-            position: fixed;
-            border: none;
-            top: 0;
-            right: 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            
-            padding: 0 5%;
-            /* gap: 5px; */
-            box-shadow: 20px 20px 40px gray;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-bottom-left-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-
-        #nav li{
-            /* color: black; */
-            /* position: fixed; */
-            display: flex;
-            list-style: none;
-        }
-
-        #nav li a {
-            /* position: fixed; */
-            /* padding: 15px 50px; */
-            /* padding: 0 10px; */
-            margin: 5px;
-            font: 400 20px;
-            border: none;
-            outline: none;
-            color: rgb(8, 2, 2);
-            display: inline-block;
-            text-decoration: none;
-            z-index: 3;
-        }
-
-        .slide1,
-        .slide2 {
-            position: fixed;
-            top: 0;
-            /* display: inline-block; */
-            display: flex;
-            height: 45px;
-            width: 100%;
-            /* padding-left: 5%; */
-            /* border-radius: 10em; */
-            border-bottom-left-radius: 7px;
-            border-bottom-right-radius: 7px;
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1.05);
-        }
-
-        .slide1 {
-            display: flex;
-            background-color: rgb(203, 205, 214);
-            z-index: 2;
-        }
-
-        .slide2 {
-            display: flex;
-            opacity: 0;
-            background-color: rgba(203, 205, 214, .5);
-            z-index: 1;
-            box-shadow: 0 0 20px #ffffffaa inset;
-        }
-
-        .squeeze {
-            transform: scale(0.9);
-        }
     </style>
-    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
-
 <body>
-    <header>    
-            <!-- <ul id="nav" style="display: flex;align-items: center;background-color: white;"> -->
-            <ul id="nav">
-                <li class="slide1"></li>
-                <li class="slide2"></li>
-                <li><a href="web/main.html">网站首页</a></li>
-                <li><a href="web/culture.html">文化湖北</a></li>
-                <li><a href="web/diet.html">食在湖北</a></li>
-                <li><a href="web/travel.html">景点推荐</a></li>
-                <li><a href="web/craft.html">非遗传承</a></li>
-            </ul>
-    </header>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-    $("#nav a").on("click", function () {
-        var position = $(this).parent().position();
-        var width = $(this).parent().width();
-        $("#nav .slide1").css({ opacity: 1, left: +position.left, width: width });
-    });
-    $("#nav a").on("mouseover", function () {
-        var position = $(this).parent().position();
-        var width = $(this).parent().width();
-        $("#nav .slide2").css({ opacity: 1, left: +position.left, width: width }).addClass("squeeze");
-    });
-    $("#nav a").on("mouseout", function () {
-        $("#nav .slide2").css({ opacity: 0 }).removeClass("squeeze");
-    });
-    var currentWidth = $("#nav li:nth-of-type(3) a").parent("li").width();
-    var current = $("li:nth-of-type(3) a").position();
-    $("#nav .slide1").css({ left: +current.left, width: currentWidth });
-</script>
+    <div class="nav">
+        <ul>  
+            <li><a href="web/main.html">网站首页</a></li>
+            <li><a href="web/culture.html">文化湖北</a></li>
+            <li><a href="web/diet.html">食在湖北</a></li>
+            <li><a href="web/travel.html">景点推荐</a></li>
+            <li><a href="web/craft.html">非遗传承</a></li>
+            <div class="nav-box"></div>
+        </ul>
+    </div>
 </body>
-
-
 </html>

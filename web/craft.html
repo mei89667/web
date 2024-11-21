@@ -1,16 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>非遗传承</title> -->
-    {% extends "../base.html" %}
-    {% block title %}首页{% endblock %}
+    <title>景点推荐</title>
     <link rel="stylesheet" href="../style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Muli', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            width: 90vw;
+        }
+
+        .panel {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 80vh;
+            border-radius: 50px;
+            color: #fff;
+            cursor: pointer;
+            flex: 0.5;
+            margin: 10px;
+            position: relative;
+            transition: all 700ms ease-in;
+        }
+
+        .panel h3 {
+            font-size: 24px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+            opacity: 0;
+        }
+
+        .panel.active {
+            flex: 5;
+        }
+
+        .panel.active h3 {
+            opacity: 1;
+            transition: opacity 0.3s ease-in 0.4s;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100vw;
+            }
+
+            .panel:nth-of-type(4),
+            .panel:nth-of-type(5) {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            const panels = document.querySelectorAll('.panel')
+                panels.forEach(panel => {
+                    panel.addEventListener('click', () => {
+                        removeActiveClasses()
+                        panel.classList.add('active')
+                    })
+                })
+
+            function removeActiveClasses() {
+                panels.forEach(panel => {
+                    panel.classList.remove('active')
+                })
+            }    
+        }
+        
+    </script>
 </head>
 <body>
-    <header>    
+    <!-- <header>    
         <ul id="nav">
             <li class="slide1"></li>
             <li class="slide2"></li>
@@ -20,7 +98,40 @@
             <li><a href="travel.html">景点推荐</a></li>
             <li><a href="craft.html">非遗传承</a></li>
         </ul>
-    </header>
-    <script src="../myjs.js"></script>
+    </header> -->
+    <div class="nav">
+        <ul>  
+            <li><a href="../index.html">网站首页</a></li>
+            <li><a href="culture.html">文化湖北</a></li>
+            <li><a href="diet.html">食在湖北</a></li>
+            <li><a href="travel.html">景点推荐</a></li>
+            <li><a href="craft.html">非遗传承</a></li>
+            <div class="nav-box"></div>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="panel active"
+            style="background-image: url(../images/travel1.jpg)">
+            <h3>Explore The World</h3>
+        </div>
+        <div class="panel"
+            style="background-image: url(../images/travel2.jpg)">
+            <h3>Wild Forest</h3>
+        </div>
+        <div class="panel"
+            style="background-image: url(../images/travel3.jpg)">
+            <h3>Sunny Beach</h3>
+        </div>
+        <div class="panel"
+            style="background-image: url(../images/travel4.jpg)">
+            <h3>City on Winter</h3>
+        </div>
+        <div class="panel"
+            style="background-image: url(../images/travel5.jpg)">
+            <h3>Mountains - Clouds</h3>
+        </div>
+
+    </div>
+<script src="../myjs.js"></script>    
 </body>
 </html>

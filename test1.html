@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>page2</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav>
+            <input type="radio" name="tab" id="home" >
+            <input type="radio" name="tab" id="comment"checked>
+            <input type="radio" name="tab" id="envelope">
+            <input type="radio" name="tab" id="heart">
+            <input type="radio" name="tab" id="user">
+            <label for="home" class="home" onclick="location.href='#';"><a href="test.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a></label>
+            <label for="comment" class="comment" onclick="location.href='#';"><a href="test1.html"><i class="fa fa-comment" aria-hidden="true"></i>Comment</a></label>
+            <label for="envelope" class="envelope" onclick="location.href='#';"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>Envelope</a></label>
+            <label for="heart" class="heart" onclick="location.href='#';"><a href="#"><i class="fa fa-heart" aria-hidden="true"></i>Heart</a></label>
+            <label for="user" class="user" onclick="location.href='#';"><a href="#"><i class="fa fa-user" aria-hidden="true"></i>User</a></label>
+            <div class="tab"></div>
+        </nav>
+    </div>
+    <h1>4444</h1>
+    <script>
+        
+    const labels = document.querySelectorAll('nav label');
+    labels.forEach((label) => {
+        label.addEventListener('click', (event) => {
+            event.preventDefault(); // 阻止默认的a标签跳转行为，便于自定义
+            const href = label.querySelector('a').getAttribute('href');
+            if (href) {
+                window.location.href = href; // 根据a标签里的href属性值进行页面跳转
+            }
+        });
+    });
+
+        
+    </script>
+</body>
+
+</html>
