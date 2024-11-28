@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+   <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>湖北美食</title>
+  <!-- 引入 Font Awesome 图标库的 CSS 文件 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>食在湖北</title>
@@ -11,13 +20,16 @@
           border: 0;
           transition: all .5s ease;
       }
+      body{
+         background-color: #888;
+      }
       .container {
          position: relative;
          display: flex;
          justify-content: center;
          align-items: center;
-         max-width: 600px;
-         height: 300px;
+         max-width: 800px;
+         height: 500px;
          margin: 10% auto;
          overflow: hidden;
          z-index: 0;
@@ -32,25 +44,71 @@
          position: absolute;
          top: 0;
          left: 100%;
-         width: 60%;
+         width: 55%;
          height: 100%;
          background: rgba(0, 0, 0, 0.5);
          padding: 35px 25px;
       }
       .container:hover .intro {
-         left:50%;
+         left:40%;
          z-index: 999;
          color: white;
       }
       
+      .intro {
+      padding: 20px;
+    }
+
+    /* 食物名称样式 */
+      .foodname {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #bebdbd; /* 这里将颜色从 #333 修改为 #555，使其变亮一点 */
+      }
+
+      /* 原料和做法标题样式 */
+      h3 {
+      font-size: 18px;
+      margin-top: 15px;
+      color: #bebaba; /* 从 #555 修改为 #777，调亮颜色 */
+      }
+
+      /* 段落文本样式 */
+      p {
+      line-height: 1.6;
+      color: #888; /* 从 #666 修改为 #888，调亮颜色 */
+      }
+
+    .back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  display: none;
+  transition: 0.3s;
+}
+
+.back-to-top:hover {
+  background-color: #555;
+}
+
     </style>
     <link rel="stylesheet" href="../style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
 </head>
 
    
 <body>
->    
+  
    <div class="nav" style="display: flex">
       <ul>  
          <li><a href="../index.html">网站首页</a></li>
@@ -63,52 +121,108 @@
       </ul>
   </div>
 
-<!-- <body style="background-color: darkgrey;height: 100vh;justify-content: center;align-items: center;display: flex;"> -->
+
    
- <div class="wuhan">
+ 
     
-    <h1 class="foodplace"></h1>
+    
 
       <div class="container">
          
-            <img src="../images/foodwuhan1.jpeg" alt="热干面">'
+            <img src="../images/diet1.jpeg" alt="热干面">'
             <div class="intro">
-            <h2 class="foodname">热干面</h2>
-            <p class="foodintro">武汉最具代表性的小吃之一，面条筋道有嚼劲，搭配芝麻酱、葱花、萝卜丁等调料，香气扑鼻</p>
+               <h2 class="foodname">热干面</h2>
+               <h3>原料</h3>
+               <p>碱水面条、芝麻酱、香油、葱花、萝卜丁、盐、生抽、老抽、胡椒粉、醋、蒜末等。</p>
+               <h3>做法</h3>
+               <p>1. 烧一锅开水，将碱水面条放入锅中煮熟，捞出沥干水分，放入碗中，加入香油搅拌均匀，防止面条粘连。
+               <br> 2. 取适量芝麻酱，加入盐、生抽、老抽、胡椒粉、醋、蒜末等调料，用适量的温水搅拌均匀，调制成芝麻酱糊。
+               <br> 3. 将调好的芝麻酱糊倒入面条碗中，搅拌均匀，使面条均匀地裹上芝麻酱。
+               <br> 4. 最后撒上葱花、萝卜丁即可。</p>
+               <p class="foodintro">武汉最具代表性的小吃之一，面条筋道有嚼劲，搭配芝麻酱、葱花、萝卜丁等调料，香气扑鼻</p>
+            </div>
+      </div>
+
+      <div class="container">
+         <img src="../images/diet2.jpg" alt="三鲜豆皮">
+         <div class="intro">
+           <h2 class="foodname">三鲜豆皮</h2>
+           <h3>原料</h3>
+           <p>糯米、豆皮、猪肉、香菇、竹笋、鸡蛋、盐、生抽、老抽、蚝油、胡椒粉、葱姜蒜等。</p>
+           <h3>做法</h3>
+           <p>1. 将糯米提前浸泡数小时，然后蒸熟备用。
+             <br> 2. 猪肉、香菇、竹笋切成丁，葱姜蒜切末。锅中倒油，放入葱姜蒜末爆香，加入猪肉丁煸炒至变色，再加入香菇丁、竹笋丁翻炒均匀，加入盐、生抽、老抽、蚝油、胡椒粉等调料调味，制成馅料。
+             <br> 3. 将豆皮平铺在平底锅上，倒入适量蛋液，摊平，待蛋液稍微凝固后，将蒸熟的糯米均匀地铺在豆皮上，压实。
+             <br> 4. 在糯米上铺上炒好的馅料，然后将豆皮从一端卷起，卷成卷状，煎至两面金黄即可。</p>
+           <p class="foodintro">以糯米、豆皮为主要原料，包裹着鲜肉、鲜蛋、鲜虾等馅料，口感丰富，味道鲜美</p>
          </div>
       </div>
 
-    <div class="container">
-      <img src="../images/foodwuhan2.jpg" alt="三鲜豆皮">
-      <div class="intro">
-      <h2 class="foodname">三鲜豆皮</h2>
-      <p class="foodintro">以糯米、豆皮为主要原料，包裹着鲜肉、鲜蛋、鲜虾等馅料，口感丰富，味道鲜美</p>
-      </div>
-    </div>
- </div>  
+      <div class="container">
+         <img src="../images/diet3.jpeg" alt="排骨藕汤">
+         <div class="intro">
+           <h2 class="foodname">排骨藕汤</h2>
+           <h3>原料</h3>
+           <p>排骨、莲藕、姜片、葱段、料酒、盐、胡椒粉等。</p>
+           <h3>做法</h3>
+           <p>1. 排骨洗净剁成小段，冷水下锅，加入姜片、葱段、料酒，焯水去腥后捞出沥干。
+             <br> 2. 莲藕去皮洗净，切成滚刀块，用刀背拍松藕块（这样可使藕汤更易浓稠）。
+             <br> 3. 将排骨和藕块放入砂锅中，加入足量的清水，大火烧开后转小火慢炖 1.5 - 2 小时，至排骨和藕块熟透。
+             <br> 4. 最后加入适量盐和胡椒粉调味即可。</p>
+           <p class="foodintro">湖北的传统名菜，汤鲜味美，藕香软糯，排骨肉质鲜嫩，营养丰富，是家庭聚会和冬季暖身的佳品。</p>
+         </div>
+       </div>
+       
+       <div class="container">
+         <img src="../images/diet4.jpeg" alt="黄陂三鲜">
+         <div class="intro">
+           <h2 class="foodname">黄陂三鲜</h2>
+           <h3>原料</h3>
+           <p>鱼丸、肉丸、肉糕、木耳、青菜、鸡汤、盐、胡椒粉、香油等。</p>
+           <h3>做法</h3>
+           <p>1. 鱼丸、肉丸、肉糕均为提前制作好的半成品（鱼丸一般选用新鲜鱼肉剁成茸，加入葱姜水、盐、淀粉等搅拌上劲后制成丸子；肉丸以猪肉为主料，加入调料搅拌均匀后制成；肉糕则是将猪肉、鱼肉、淀粉等混合蒸制而成）。
+             <br> 2. 锅中加入鸡汤或清水烧开，先放入肉糕煮几分钟，再放入鱼丸和肉丸继续煮至熟透。
+             <br> 3. 放入木耳、青菜稍煮片刻，加入适量盐、胡椒粉调味，最后淋上香油即可。</p>
+           <p class="foodintro">黄陂地区的特色美食，集鱼丸的滑嫩、肉丸的鲜美、肉糕的软糯于一体，口感丰富，味道浓郁，常作为宴席上的重要菜品。</p>
+         </div>
+       </div>
+       
+       <div class="container">
+         <img src="../images/diet5.jpeg" alt="洪山菜薹炒腊肉">
+         <div class="intro">
+           <h2 class="foodname">洪山菜薹炒腊肉</h2>
+           <h3>原料</h3>
+           <p>洪山菜薹、腊肉、蒜、盐、生抽、白糖等。</p>
+           <h3>做法</h3>
+           <p>1. 洪山菜薹洗净，切成段；腊肉切片，用温水浸泡片刻去除部分盐分，捞出沥干；蒜切末。
+             <br> 2. 锅中放少许油，油热后放入腊肉片煸炒出油，至腊肉微焦，盛出备用。
+             <br> 3. 锅中留底油，放入蒜末爆香，加入洪山菜薹快速翻炒至断生。
+             <br> 4. 倒入炒过的腊肉片，加入适量盐、生抽、白糖调味，翻炒均匀即可。</p>
+           <p class="foodintro">洪山菜薹是湖北武汉的特产蔬菜，质地脆嫩，清甜可口，与腊肉搭配炒制，腊味浓郁，菜薹鲜嫩，别具风味。</p>
+         </div>
+       </div>
+ 
+       <button class="back-to-top"><i class="fa-solid fa-arrow-up"></i></button>
 
- <div class="jingzhou">
-    
-    <h1 class="foodplace">荆州</h1>
-    <img src="" alt="">
-    <h2 class="foodname"></h2>
-    <p class="foodintro">1111</p>
- </div>
- <div class="xiangyang">
-    
-    <h1 class="foodplace">襄阳</h1>
-    <img src="" alt="">
-    <h2 class="foodname"></h2>
-    <p class="foodintro"></p>
- </div>
- <div class="qianjiang">
-    
-    <h1 class="foodplace">潜江</h1>
-    <img src="" alt="">
-    <h2 class="foodname">小龙虾</h2>
-    <p class="foodintro"></p>
- </div> 
-
+       <script>
+         // 获取回到顶部按钮元素
+         const backToTopButton = document.querySelector('.back-to-top');
+         // 监听页面滚动事件
+         window.addEventListener('scroll', function () {
+           if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+             backToTopButton.style.display = 'block';
+           } else {
+             backToTopButton.style.display = 'none';
+           }
+         });
+         // 为回到顶部按钮添加点击事件监听器
+         backToTopButton.addEventListener('click', function () {
+           window.scrollTo({
+             top: 0,
+             behavior:'smooth'
+           });
+         });
+       </script>
 
  <script src="../myjs.js"></script>
 </body>

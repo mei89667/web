@@ -49,3 +49,23 @@ document.getElementById('prev').onclick = function(){
     let lists = document.querySelectorAll('.item');
     document.getElementById('slide').prepend(lists[lists.length - 1]);
 }
+
+
+
+    // 获取回到顶部按钮元素
+    const backToTopButton = document.querySelector('.back-to-top');
+    // 监听页面滚动事件
+    window.addEventListener('scroll', function () {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+    // 为回到顶部按钮添加点击事件监听器
+    backToTopButton.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
