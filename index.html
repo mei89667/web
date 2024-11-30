@@ -13,7 +13,146 @@
         body {
             background-image: url(images/main.jpg);
             background-size: cover;
+            display: flex;
+            justify-content: center;
         }
+
+        .btn {
+            position: absolute;
+            top: 700px;
+        }
+        button {
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        
+    }
+    
+    .maintitle {
+        position: absolute;
+        top: 400px;
+    }
+    .maintitle h1 {
+        color: #eee;
+        line-height: 0.75;
+        position: relative;
+        font-size: 6rem;
+        perspective: 100px;
+        font-weight: 900;
+    }
+
+    .maintitle h1:before {
+        position: absolute;
+        content: "畅游湖北";
+        left: 0;
+        bottom: -150%;
+        right: 0;
+        transform: scaleX(130%) scaleY(-1) rotateX(-40deg);
+        opacity: 0.3;
+        color: #fff;
+        z-index: -1;
+    }
+
+    :root {
+        --clr: rgb(245,7,90);
+    }
+    .btn a {
+        position: relative;
+        display: block;
+        padding: 20px 30px;
+        overflow: hidden;
+        color: var(--clr);
+        border-radius: 2px;
+        transition: all 0.5s;
+        text-decoration: none;
+    }
+
+    .btn a:hover {
+        background: var(--clr);
+        color:#fff;
+        box-shadow: 0 0 5px var(--clr), 0 0 5px var(--clr), 0 0 5px var(--clr);
+    }
+    .btn a > span{
+        position: absolute;
+        display: block;
+        background: linear-gradient(calc(var(--i) * 90deg),transparent,var(--clr));
+    }
+    .btn a > span:nth-child(1) {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        animation: move1 1s linear infinite;
+    }
+
+    @keyframes move1 {
+        0% {
+            left: -100%;
+        }
+        50%,
+        100% {
+            left: 100%;
+        }
+    }
+    .btn a > span:nth-child(2) {
+        top: 0;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        animation: move2 1s linear infinite;
+        animation-delay: 0.25s;
+    }
+
+    @keyframes move2 {
+        0% {
+            top: -100%;
+        }
+        50%,
+        100% {
+            top: 100%;
+        }
+    }
+    .btn a > span:nth-child(3) {
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 2px;
+        animation: move3 1s linear infinite;
+        animation-delay: 0.5s;
+    }
+
+    @keyframes move3 {
+        0% {
+            right: -100%;
+        }
+        50%,
+        100% {
+            right: 100%;
+        }
+    }
+    .btn a > span:nth-child(4) {
+        bottom: 0;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        animation: move4 1s linear infinite;
+        animation-delay: 0.75s;
+    }
+
+    @keyframes move4 {
+        0% {
+            bottom: -100%;
+        }
+        50%,
+        100% {
+            bottom: 100%;
+        }
+    }
     </style>
 </head>
 <body>
@@ -27,5 +166,20 @@
             <div class="nav-box"></div>
         </ul>
     </div>
+    <div class="maintitle">
+        <h1>畅游湖北</h1>
+    </div>
+<!-- <div class="btn">
+    <button class="button - position" onclick="window.location.href='https://flyjumpbow.github.io/609/';">点击返回寝室主页</button>
+</div> -->
+<div class="btn">
+    <a href="https://flyjumpbow.github.io/609/">
+        <span style="--i: 1"></span>
+        <span style="--i: 2"></span>
+        <span style="--i: 3"></span>
+        <span style="--i: 4"></span>
+        点击返回寝室主页
+    </a>
+</div>
 </body>
 </html>
